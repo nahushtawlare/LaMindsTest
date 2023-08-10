@@ -1,0 +1,53 @@
+﻿@model EmployeeinfoModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Employee</h1>
+<a asp-action="AddEditEmployee">Add Employee</a>
+@if (Model != null)
+{
+    if (Model.EmployeesList.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Employee Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Hobby</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.EmployeesList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.Salary</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.States</td>
+                        <td>@item.City</td>
+                        <td>@item.Hobby</td>
+                        <td>
+                            <a asp-action="AddEditEmployee" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Details</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+}
+
+
+

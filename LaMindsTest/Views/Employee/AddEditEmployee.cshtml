@@ -1,0 +1,68 @@
+﻿@model Employeeinfo
+@{
+    ViewData["Title"] = "AddEditEmployee";
+}
+
+<h1>Add/Edit Employee Details</h1>
+
+<form asp-action="Create">
+    <div class="container">
+        <input type="hidden" asp-for="Id" />
+        <div class="row mb-3">
+            <div class="col-md-3">Title</div>
+            <div class="col-md-9">
+                <input type="text" asp-for="EmployeeName" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Gender</div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Gender" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Salary</div>
+            <div class="col-md-9">
+                <input type="number" asp-for="Salary" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Email</div>
+            <div class="col-md-9">
+                <input type="email" asp-for="Email" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Phone Number</div>
+            <div class="col-md-9">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" asp-for="PhoneNumber" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">State</div>
+            <div class="col-md-9">
+                <input type="text" asp-for="States" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">City</div>
+            <div class="col-md-9">
+                <input type="text" asp-for="City" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Hobby</div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Hobby" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
